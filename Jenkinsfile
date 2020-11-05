@@ -53,7 +53,7 @@ pipeline {
 		    script {
 		kubernetesDeploy(
 		    configs: 'my-app.yaml',
-		    kubeconfigId: 'kubernetes_cluster_config'
+		    kubeconfigId: 'kubernetes-cluster-cert'
 		 )
 		    }
             }
