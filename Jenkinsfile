@@ -50,7 +50,12 @@ pipeline {
         }
         stage('Deploy in k8s Cluster') {
             steps {
-		sh "kubectl apply -f my-app.yaml"
+		script {
+		    kubernetesDeploy(
+		    	configs: 'my-app.yaml',
+			kubeconfigId: 'kubernetes-cluster-cert'
+		    )
+		}
             }
         }
     }
