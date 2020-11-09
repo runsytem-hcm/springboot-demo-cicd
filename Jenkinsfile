@@ -56,7 +56,7 @@ pipeline {
 //		    	configs: 'my-app.yaml',
 //			kubeconfigId: 'kubernetes-cluster-cert'
 			sh 'kubectl apply -f my-app.yaml'
-		    )
+//		    )
 		}
            }
         }
