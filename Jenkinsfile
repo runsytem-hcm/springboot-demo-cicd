@@ -50,6 +50,7 @@ pipeline {
         }
         stage('Deploy in k8s Cluster') {
             steps {
+		echo "====== Starting Deploy in K8S ======"
 		script {
 		    kubernetesDeploy(
 		    	configs: 'my-app.yaml',
