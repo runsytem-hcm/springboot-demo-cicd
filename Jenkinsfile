@@ -55,7 +55,9 @@ pipeline {
 //		    kubernetesDeploy(
 //		    	configs: 'my-app.yaml',
 //			kubeconfigId: 'kubernetes-cluster-cert'
-			sh "${env.kubectl} apply -f my-app.yaml"
+			    withKubeConfig([credentialsId: 'kubernetes-cluster-cert', serverUrl: 'https://192.168.214.154:6443']) {
+      				sh 'kubectl apply -f my-app.yaml'
+    			     }
 //		    )
 		}
            }
