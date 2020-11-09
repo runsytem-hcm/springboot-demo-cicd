@@ -52,9 +52,10 @@ pipeline {
             steps {
 		echo "====== Starting Deploy in K8S ======"
 		script {
-		    kubernetesDeploy(
-		    	configs: 'my-app.yaml',
-			kubeconfigId: 'kubernetes-cluster-cert'
+//		    kubernetesDeploy(
+//		    	configs: 'my-app.yaml',
+//			kubeconfigId: 'kubernetes-cluster-cert'
+			sh 'kubectl apply -f my-app.yaml'
 		    )
 		}
            }
