@@ -50,12 +50,12 @@ pipeline {
         }
         stage('Deploy in k8s Cluster') {
             steps {
-		echo "====== Starting Deploy in K8S ======"
+		echo "====== Starting Deploy in K8S ======${env.kubectl}"
 		script {
 //		    kubernetesDeploy(
 //		    	configs: 'my-app.yaml',
 //			kubeconfigId: 'kubernetes-cluster-cert'
-			sh '${env.kubectl} apply -f my-app.yaml'
+			sh "${env.kubectl} apply -f my-app.yaml"
 //		    )
 		}
            }
