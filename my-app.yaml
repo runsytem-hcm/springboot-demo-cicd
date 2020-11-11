@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: rs-dev
   name: my-app-service
   labels:
     app: my-app-service
@@ -25,7 +24,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: rs-dev
   name: my-app-service
   labels:
     app: my-app-service
