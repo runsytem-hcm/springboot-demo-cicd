@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-service
   namespace: rs-dev
+  name: my-app-service
   labels:
     app: my-app-service
 spec:
@@ -25,8 +25,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-app-service
   namespace: rs-dev
+  name: my-app-service
   labels:
     app: my-app-service
 spec:
@@ -37,8 +37,3 @@ spec:
   selector:
     app: my-app-service
   type: NodePort
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: rs-dev
