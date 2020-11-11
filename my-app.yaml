@@ -31,7 +31,7 @@ spec:
   ports:
     - port: 8109
       targetPort: 8109
-      nodePort: 30207
+      nodePort: 30208
   selector:
     app: my-app-service
   type: NodePort
